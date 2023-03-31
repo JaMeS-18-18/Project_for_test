@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Pagination from "https://cdn.skypack.dev/rc-pagination@3.1.15";
+import Pagination from "rc-pagination";
 import "./Product.css"
 import Products from "../../Utils/Product";
 
