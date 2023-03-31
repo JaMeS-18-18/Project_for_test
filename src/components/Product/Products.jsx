@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Pagination from "rc-pagination";
+import { useNavigate } from 'react-router-dom';
 import "./Product.css"
 import Products from "../../Utils/Product";
 
@@ -12,6 +13,7 @@ const Product = () => {
   const [Data2, setData2] = useState([]);
   const [Start, setStart] = useState(0);
   const [End, setEnd] = useState(10);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -108,7 +110,7 @@ const Product = () => {
               </div>
             </div>
           </div>
-          : window.location.href = "/"
+          : navigate("/")
       }
     </>
   );

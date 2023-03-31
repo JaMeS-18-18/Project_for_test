@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import "./App.css"
 import Login from './Utils/Login';
 export default function App() {
@@ -7,7 +7,7 @@ export default function App() {
     const [Password, setPassword] = useState("");
     const [Subdomain, setSubdomain] = useState("");
     const [message, setmessage] = useState("");
-
+    const navigate = useNavigate();
 
    async function GoLogin() {
     const requestOptions = {
@@ -21,7 +21,7 @@ export default function App() {
         setmessage(result.message)
       }
       if (result.token) {
-       window.location.href = "/products"
+        navigate("/products")
       }
     }
     return (
